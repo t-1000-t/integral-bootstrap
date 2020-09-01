@@ -51,11 +51,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="273" column="6" selection-start-line="273" selection-start-column="2" selection-end-line="273" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -96,6 +105,7 @@
       <find>stroke-width</find>
       <find>stroke-linejoin</find>
       <find>stroke-linecap</find>
+      <find>node</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,12 +196,12 @@
       <workItem from="1598888504052" duration="11707000" />
       <workItem from="1598943019333" duration="13067000" />
       <workItem from="1598959251521" duration="7345000" />
-      <workItem from="1598969410389" duration="419000" />
+      <workItem from="1598969410389" duration="1512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32538000" />
+    <option name="totallyTimeSpent" value="33631000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -204,7 +214,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="26" width="1192" height="678" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25043327" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -354,6 +363,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="273" column="6" selection-start-line="273" selection-start-column="2" selection-end-line="273" selection-end-column="6" />
         </state>
       </provider>
     </entry>
