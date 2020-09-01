@@ -1,0 +1,43 @@
+.backdrop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 145px;
+  /* left: 615px; */
+  left: 32.8%;
+
+  width: 50%;
+  height: 72%;
+  /* background-color: rgba(112, 111, 111, 0.7); */
+}
+
+/* .modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px;
+  max-width: 100%;
+  width: 99%;
+  height: 100%;
+
+  background-color: rgb(207, 159, 159);
+} */
+
+@media (min-width: 320px) and (max-width: 359px) {
+  .backdrop {
+    top: 110px;
+    width: 94%;
+    height: 62%;
+    left: 1%;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 940px) {
+  .backdrop {
+    top: 110px;
+    width: 94%;
+    height: 62%;
+    left: 4%;
+  }
+}

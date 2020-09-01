@@ -1,0 +1,87 @@
+.wrapper {
+  width: 1180px;
+  display: flex;
+  flex-wrap: wrap;
+  scroll-behavior: smooth;
+}
+
+.card {
+  display: flex;
+  text-align: center;
+  padding: 5px;
+  border: solid 1px;
+  border-color: gray;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 15px;
+  width: 270px;
+  height: 460px;
+}
+
+.nameItem {
+  width: 210px;
+  height: 80px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.fontProdCode {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  margin-top: 10px;
+
+  width: 180px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.NavLinkProd {
+  text-decoration: none;
+}
+.NavLinkProd:active,
+.NavLinkProd:focus {
+  border: none;
+  outline: none;
+}
+
+.priceInfo {
+  width: 240px;
+  height: 40px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.fontPriceRetail {
+  width: 100px;
+  margin-left: 10px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  color: rgb(0, 102, 0);
+}
+
+.fontCountry {
+  width: 100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+}
+.btnCard {
+  width: 150px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+}
