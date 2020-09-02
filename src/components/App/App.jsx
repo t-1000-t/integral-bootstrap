@@ -1,54 +1,49 @@
-import React, { Component } from "react";
-import { BrowserRouter,
-  // Route, Switch, Redirect
+import React, {Component} from "react";
+import {
+    BrowserRouter,
+    // Route, Switch, Redirect
 } from "react-router-dom";
-// import stylish from "./App.module.css";
-// import routes from "../../routes/routes";
 import widthResize from "../services/widthResize";
-// import SearchForm from "../Page/GlobalSearch/SearchForm/SearchForm";
-// import NavigationBoots from "../Page/NavigationBoots/NavigationBoots";
-import NavigationBoots from "../Page/NavigationBoots/NavigationBoots";
-// import ContactPage from "../Page/ContactPage/ContactPage";
-import FooterPage from "../Page/FooterPage/FooterPage";
-// import IntegralPage from "../Page/IntegralPage/IntegralPage";
-// import IntegralViewCategoryProducts from "../Page/IntegralViewCategoryProducts/IntegralViewCategoryProducts";
-// import IntegralProductDetails from "../Page/IntegralProductDetails/IntegralProductDetails";
-// import IntegralProduct_CodeDetails from "../Page/IntegralProduct_CodeDetails/IntegralProduct_CodeDetails";
+import NavigationBoots from "../Page/NavigationBoots";
+import FooterBoots from "../Page/FooterBoots/FooterBoots";
+import MainBoots from "../Page/MainBoots/MainBoots";
+
+
 
 class App extends Component {
-  componentDidMount() {
-    widthResize();
-  }
-  render() {
-    return (
-      <BrowserRouter>
-        {/*<NavigationBoots />*/}
-        <NavigationBoots/>
+    componentDidMount() {
+        widthResize();
+    }
 
-        {/*<div className={stylish.container}>*/}
-          {/*<Switch>*/}
-            {/*<Route exact path={routes.HOME} component={IntegralPage} />*/}
-            {/*<Route exact path={routes.CONTACT} component={ContactPage} />*/}
-            {/*<Route*/}
-              {/*path={`${routes.PRODUCTS}/:categorynum`}*/}
-              {/*component={IntegralViewCategoryProducts}*/}
-            {/*/>*/}
-            {/*<Route*/}
-              {/*path={`${routes.PRODUCT_CODE}/:someIDproduct`}*/}
-              {/*component={IntegralProduct_CodeDetails}*/}
-            {/*/>*/}
-            {/*<Route*/}
-              {/*path={`${routes.PRODUCT}/:someIDproduct`}*/}
-              {/*component={IntegralProductDetails}*/}
-            {/*/>*/}
-            {/*/!* <Route exact path={`${routes.FILTERDB}`} component={SearchForm} /> *!/*/}
-            {/*<Redirect to={routes.HOME} />*/}
-          {/*</Switch>*/}
-        {/*</div>*/}
-        <FooterPage />
-      </BrowserRouter>
-    );
-  }
+    render() {
+        return (
+                <BrowserRouter>
+                    <NavigationBoots/>
+                    <MainBoots/>
+                    {/*<div className={stylish.container}>*/}
+                    {/*<Switch>*/}
+                    {/*<Route exact path={routes.HOME} component={IntegralPage} />*/}
+                    {/*<Route exact path={routes.CONTACT} component={ContactPage} />*/}
+                    {/*<Route*/}
+                    {/*path={`${routes.PRODUCTS}/:categorynum`}*/}
+                    {/*component={IntegralViewCategoryProducts}*/}
+                    {/*/>*/}
+                    {/*<Route*/}
+                    {/*path={`${routes.PRODUCT_CODE}/:someIDproduct`}*/}
+                    {/*component={IntegralProduct_CodeDetails}*/}
+                    {/*/>*/}
+                    {/*<Route*/}
+                    {/*path={`${routes.PRODUCT}/:someIDproduct`}*/}
+                    {/*component={IntegralProductDetails}*/}
+                    {/*/>*/}
+                    {/*/!* <Route exact path={`${routes.FILTERDB}`} component={SearchForm} /> *!/*/}
+                    {/*<Redirect to={routes.HOME} />*/}
+                    {/*</Switch>*/}
+                    {/*</div>*/}
+                    <FooterBoots/>
+                </BrowserRouter>
+        );
+    }
 }
 
 export default App;
