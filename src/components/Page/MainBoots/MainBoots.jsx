@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import MainCard from "./MainCard";
-import shortId from "shortid";
+
+
 
 class MainBoots extends Component {
 
     state = {
         arrMain: [],
-        id: shortId.generate(),
         isLoading: false
     };
 
@@ -43,7 +43,7 @@ class MainBoots extends Component {
 
 
     render() {
-        const {isLoading, arrMain, id} = this.state;
+        const {isLoading, arrMain} = this.state;
         return (
             <main role="main">
                 {isLoading &&
@@ -56,7 +56,7 @@ class MainBoots extends Component {
                     <div className="container">
                         <div className="row">
                             {arrMain.length > 0 && arrMain.map(elem => (
-                                <MainCard key={id} brief_description={elem.brief_description}
+                                <MainCard key={elem.productID} brief_description={elem.brief_description}
                                           large_image={elem.large_image} product_code={elem.product_code}
                                           cardName={elem.name}></MainCard>
                             ))}

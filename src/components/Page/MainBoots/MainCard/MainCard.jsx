@@ -7,7 +7,7 @@ class MainCard extends Component {
             <div key={id} className="col-md-4">
                 <div className="card mb-4 shadow-sm">
                     <p className="card-text">&nbsp; &nbsp; Код: {product_code}</p>
-                    <img class="card-img-top" src={large_image} alt={product_code}/>
+                    <img className="card-img-top" src={large_image} alt={product_code}/>
                     <div className="card-body">
                         <h5 className="card-title">{cardName}</h5>
                         <p className="card-text">{brief_description}</p>

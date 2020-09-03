@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import closeDropdown from "../../middleware/closeDropdown";
+import showDropdown from "../../middleware/showDropdown";
 
 
 class NavigationBoots extends Component {
@@ -14,8 +16,15 @@ class NavigationBoots extends Component {
         })
     };
 
+    toggleDropdown = () => {
+        this.setState({
+            isOpenDropdown: !this.state.isOpenDropdown
+        });
+        this.state.isOpenDropdown ? closeDropdown() : showDropdown();
+    };
+
     render() {
-        const {isShow} = this.state;
+        const {isShow, isOpenDropdown} = this.state;
         return (
             <header>
                 <div>
@@ -35,19 +44,13 @@ class NavigationBoots extends Component {
                                     {/*<li className="nav-item active">*/}
                                     {/*<a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>*/}
                                     {/*</li>*/}
-                                    <li className="nav-item active">
-                                        <a className="nav-link" href="/#">Features</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="/#">Pricing</a>
-                                    </li>
-                                    <li className="nav-item dropdown">
+                                    <li id="closeDropdownShow" onClick={this.toggleDropdown} className="nav-item dropdown active">
                                         <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdownMenuLink"
-                                           role="button" data-toggle="dropdown" aria-haspopup="true"
-                                           aria-expanded="false">
-                                            Dropdown link
+                                           role="button" data-toggle="dropdown" aria-haspopup="false"
+                                           aria-expanded={isOpenDropdown ? "true" : "false"}>
+                                            Каталог товаров
                                         </a>
-                                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <div id="menuDropdownShow" className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             <a className="dropdown-item" href="/#">Action</a>
                                             <a className="dropdown-item" href="/#">Another action</a>
                                             <a className="dropdown-item" href="/#">Something else here</a>
@@ -74,7 +77,7 @@ class NavigationBoots extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-8 col-md-7 py-4">
-                                <h4 className="text-white">About</h4>
+                                <h4 className="text-white">О нас</h4>
                                 <p className="text-muted">Add some information about the album below, the author, or any
                                     other
                                     background context. Make it a few sentences long so folks can pick up some
@@ -83,7 +86,7 @@ class NavigationBoots extends Component {
                                     information.</p>
                             </div>
                             <div className="col-sm-4 offset-md-1 py-4">
-                                <h4 className="text-white">Contact</h4>
+                                <h4 className="text-white">Контакты</h4>
                                 <ul className="list-unstyled">
                                     <li><a href="/#" className="text-white">Follow on Twitter</a></li>
                                     <li><a href="/#" className="text-white">Like on Facebook</a></li>
@@ -94,8 +97,7 @@ class NavigationBoots extends Component {
                     </div>
                 </div>}
             </header>
-        )
-            ;
+        );
     }
 }
 
