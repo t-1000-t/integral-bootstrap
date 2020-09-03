@@ -9,6 +9,35 @@ class MainBoots extends Component {
         id: shortId.generate()
     };
 
+    componentDidMount() {
+        this.fetchHomeProducts();
+    }
+
+    fetchHomeProducts() {
+        this.setState({ isLoading: true });
+        try {
+            return fetch(
+                // `http://localhost:5000/api/main`
+                `https://shop-integral.herokuapp.com/api/main`
+            )
+                .then((res) => res.json())
+                .then((data) => data.main)
+                .then((arr) => {
+                    this.setState((state) => ({
+                        arrMain: [...state.arrMain, ...arr]
+                    }));
+                })
+                .catch((error) => {
+                    this.setState({ error });
+                })
+                .finally(() => {
+                    this.setState({ isLoading: false });
+                });
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
 
     render() {
         const {arrMain, id} = this.state;
@@ -17,7 +46,9 @@ class MainBoots extends Component {
                 <div className="album py-5 bg-light">
                     <div className="container">
                         <div className="row">
-                            {arrMain.length > 0 && <MainCard key={id}></MainCard>}
+                            {arrMain.length > 0 && arrMain.map(elem => (
+                                <MainCard key={id} brief_description={elem.brief_description} large_image={elem.large_image} product_code={elem.product_code} cardName={elem.name} ></MainCard>
+                            ))}
                         </div>
                     </div>
                 </div>

@@ -2,20 +2,15 @@ import React, {Component} from 'react';
 
 class MainCard extends Component {
     render() {
-        const {id} = this.props;
+        const {id, large_image, product_code, cardName, brief_description} = this.props;
         return (
             <div key={id} className="col-md-4">
                 <div className="card mb-4 shadow-sm">
-                    <svg className="bd-placeholder-img card-img-top" width="100%" height="225"
-                         xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
-                         focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"/>
-                        <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                    </svg>
+                    <p className="card-text">&nbsp; &nbsp; Код: {product_code}</p>
+                    <img class="card-img-top" src={large_image} alt={product_code}/>
                     <div className="card-body">
-                        <p className="card-text">This is a wider card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className="card-title">{cardName}</h5>
+                        <p className="card-text">{brief_description}</p>
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="btn-group">
                                 <button type="button" className="btn btn-sm btn-outline-secondary">View</button>

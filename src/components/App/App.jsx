@@ -19,6 +19,7 @@ class App extends Component {
         return (
                 <BrowserRouter>
                     <NavigationBoots/>
+
                     <MainBoots/>
                     {/*<div className={stylish.container}>*/}
                     {/*<Switch>*/}
