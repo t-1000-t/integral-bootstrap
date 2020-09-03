@@ -6,7 +6,8 @@ class MainBoots extends Component {
 
     state = {
         arrMain: [],
-        id: shortId.generate()
+        id: shortId.generate(),
+        isLoading: false
     };
 
     componentDidMount() {
@@ -14,7 +15,7 @@ class MainBoots extends Component {
     }
 
     fetchHomeProducts() {
-        this.setState({ isLoading: true });
+        this.setState({isLoading: true});
         try {
             return fetch(
                 // `http://localhost:5000/api/main`
@@ -28,10 +29,12 @@ class MainBoots extends Component {
                     }));
                 })
                 .catch((error) => {
-                    this.setState({ error });
+                    this.setState({error});
                 })
                 .finally(() => {
-                    this.setState({ isLoading: false });
+                    this.setState(
+                        {isLoading: false}
+                    );
                 });
         } catch (err) {
             console.error(err);
@@ -40,14 +43,22 @@ class MainBoots extends Component {
 
 
     render() {
-        const {arrMain, id} = this.state;
+        const {isLoading, arrMain, id} = this.state;
         return (
             <main role="main">
-                <div className="album py-5 bg-light">
+                {isLoading &&
+                    <div className="text-center">
+                        <div className="spinner-border m-5" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </div>
+                    </div>}
+                <div className="album py-5 bg-white">
                     <div className="container">
                         <div className="row">
                             {arrMain.length > 0 && arrMain.map(elem => (
-                                <MainCard key={id} brief_description={elem.brief_description} large_image={elem.large_image} product_code={elem.product_code} cardName={elem.name} ></MainCard>
+                                <MainCard key={id} brief_description={elem.brief_description}
+                                          large_image={elem.large_image} product_code={elem.product_code}
+                                          cardName={elem.name}></MainCard>
                             ))}
                         </div>
                     </div>
