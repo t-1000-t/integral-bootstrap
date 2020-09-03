@@ -51,16 +51,16 @@ class NavigationBoots extends Component {
                                             Каталог товаров
                                         </a>
                                         <div id="menuDropdownShow" className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a className="dropdown-item" href="/#">Action</a>
-                                            <a className="dropdown-item" href="/#">Another action</a>
-                                            <a className="dropdown-item" href="/#">Something else here</a>
+                                            <a className="dropdown-item" href="/#">Ноутбуки</a>
+                                            <a className="dropdown-item" href="/#">Планшеты</a>
+                                            <a className="dropdown-item" href="/#">Компьютеры</a>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
 
                             <form className="form-inline mt-0 mt-md-0 mr-sm-2">
-                                <input className="form-control mr-sm-2" type="text" placeholder="Search"
+                                <input className="form-control mr-sm-2" type="text" placeholder="Поиск..."
                                        aria-label="Search"/>
                             </form>
                             <button onClick={this.toggleShow} type="button" className="btn-sm"
@@ -90,7 +90,7 @@ class NavigationBoots extends Component {
                                 <ul className="list-unstyled">
                                     <li><a href="/#" className="text-white">Follow on Twitter</a></li>
                                     <li><a href="/#" className="text-white">Like on Facebook</a></li>
-                                    <li><a href="/#" className="text-white">Email me</a></li>
+                                    <li><a href="/#" className="text-white">Email</a></li>
                                 </ul>
                             </div>
                         </div>
