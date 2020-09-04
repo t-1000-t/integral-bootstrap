@@ -5,9 +5,45 @@ import showDropdown from "../../middleware/showDropdown";
 
 class NavigationBoots extends Component {
 
+
     state = {
         isShow: false,
         isOpenDropdown: false
+    };
+
+    componentDidMount() {
+        this._isMounted = true;
+        window.addEventListener("keydown", this.handleKeyPress);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevState.isOpenDropdown !== this.state.isOpenDropdown && this.state.isOpenDropdown === false) {
+            this.toogleShowFalse();
+        }
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+        window.removeEventListener("keydown", this.handleKeyPress);
+    }
+
+    // Escape or click another place, close dropDown
+    handleKeyPress = (e) => {
+        console.log("e", e.code);
+        if (e.code !== "Escape") {
+            return;
+        }
+
+        this.toogleShowFalse();
+        this.setState({
+            isOpenDropdown: false
+        });
+    };
+
+    // Open or Close category
+
+    toogleShowFalse = () => {
+        closeDropdown();
     };
 
     toggleShow = () => {
@@ -44,25 +80,45 @@ class NavigationBoots extends Component {
                                     {/*<li className="nav-item active">*/}
                                     {/*<a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>*/}
                                     {/*</li>*/}
-                                    <li id="closeDropdownShow" onClick={this.toggleDropdown} className="nav-item dropdown active">
-                                        <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdownMenuLink"
+                                    <li id="closeDropdownShow"
+                                        className="nav-item dropdown active">
+                                        <a onClick={this.toggleDropdown} className="nav-link dropdown-toggle" href="/#" id="navbarDropdownMenuLink"
                                            role="button" data-toggle="dropdown" aria-haspopup="false"
                                            aria-expanded={isOpenDropdown ? "true" : "false"}>
                                             Каталог товаров
                                         </a>
-                                        <div id="menuDropdownShow" className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a className="dropdown-item" href="/#">Ноутбуки</a>
-                                            <a className="dropdown-item" href="/#">Планшеты</a>
-                                            <a className="dropdown-item" href="/#">Компьютеры</a>
+                                        <div id="menuDropdownShow" className="dropdown-menu"
+                                             aria-labelledby="navbarDropdownMenuLink">
+                                            <a className="dropdown-item font-weight-normal" href="/#">Ноутбуки</a>
+                                            <a className="dropdown-item font-weight-normal" href="/#">Планшеты</a>
+                                            <a className="dropdown-item font-weight-normal" href="/#">Компьютеры</a>
+                                            <a className="dropdown-item font-weight-normal" href="/#">Комплектующие</a>
+                                            <a className="dropdown-item font-weight-normal" href="/#">Смартфоны, связь, навигация</a>
+                                            <a className="dropdown-item font-weight-normal" href="/#">Принтеры</a>
+                                            <a className="dropdown-item font-weight-normal" href="/#">Сетевое оборудование</a>
+                                            <a className="dropdown-item font-weight-normal" href="/#">Телевизоры, проекторы</a>
+                                            <a className="dropdown-item font-weight-normal" href="/#">Гарнитура</a>
+                                            <a className="dropdown-item font-weight-normal" href="/#">Бытовая техника</a>
+                                            <button onClick={this.toggleDropdown} className="dropdown-item text-muted" href="/#">Закрыть <svg width="1em"
+                                                                                                     height="1em"
+                                                                                                     viewBox="0 0 16 16"
+                                                                                                     className="bi bi-caret-up-fill text-success"
+                                                                                                     fill="currentColor"
+                                                                                                     xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                                            </svg></button>
+
                                         </div>
                                     </li>
                                 </ul>
+                                <form className="form-inline mt-0 mt-md-0 ml-sm-2">
+                                    <input className="form-control mr-sm-2" type="text" placeholder="Поиск..."
+                                           aria-label="Search"/>
+                                </form>
                             </div>
 
-                            <form className="form-inline mt-0 mt-md-0 mr-sm-2">
-                                <input className="form-control mr-sm-2" type="text" placeholder="Поиск..."
-                                       aria-label="Search"/>
-                            </form>
+
                             <button onClick={this.toggleShow} type="button" className="btn-sm"
                                     data-toggle="collapse"
                                     data-target="#navbarHeader"
