@@ -112,12 +112,11 @@ class NavigationBoots extends Component {
                                         </div>
                                     </li>
                                 </ul>
-                                <form className="form-inline mt-0 mt-md-0 ml-sm-2">
-                                    <input className="form-control mr-sm-2" type="text" placeholder="Поиск..."
-                                           aria-label="Search"/>
-                                </form>
                             </div>
-
+                            <form className="form-inline mt-0 mt-md-0 ml-sm-2">
+                                <input className="form-control mr-sm-2" type="text" placeholder="Поиск..."
+                                       aria-label="Поиск..."/>
+                            </form>
 
                             <button onClick={this.toggleShow} type="button" className="btn-sm"
                                     data-toggle="collapse"

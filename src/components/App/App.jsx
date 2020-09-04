@@ -3,7 +3,7 @@ import {
     // BrowserRouter,
     // Route, Switch, Redirect
 } from "react-router-dom";
-import widthResize from "../services/widthResize";
+// import widthResize from "../services/widthResize";
 import NavigationBoots from "../Page/NavigationBoots";
 import FooterBoots from "../Page/FooterBoots/FooterBoots";
 import MainBoots from "../Page/MainBoots/MainBoots";
@@ -11,7 +11,7 @@ import MainBoots from "../Page/MainBoots/MainBoots";
 
 class App extends Component {
     componentDidMount() {
-        widthResize();
+        // widthResize();
     }
 
     render() {
