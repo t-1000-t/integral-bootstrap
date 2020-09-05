@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import closeDropdown from "../../middleware/closeDropdown";
 import showDropdown from "../../middleware/showDropdown";
+import Dropright from "../MainBoots/Dropright/Dropright";
+import shortid from "shortid";
 
 
 class NavigationBoots extends Component {
@@ -8,7 +10,8 @@ class NavigationBoots extends Component {
 
     state = {
         isShow: false,
-        isOpenDropdown: false
+        isOpenDropdown: false,
+        category: [{category: "Ноутбуки"}, {category: "Планшеты"}, {category: "Компьютеры"}, {category: "Комплектующие"}, {category: "Смартфоны, связь, навигация"}, {category: "Принтеры"}, {category: "Сетевое оборудование"}, {category: "Телевизоры, проекторы"}, {category: "Гарнитура"}, {category: "Бытовая техника"}]
     };
 
     componentDidMount() {
@@ -60,7 +63,7 @@ class NavigationBoots extends Component {
     };
 
     render() {
-        const {isShow, isOpenDropdown} = this.state;
+        const {isShow, isOpenDropdown, category} = this.state;
         return (
             <header>
                 <div>
@@ -89,16 +92,19 @@ class NavigationBoots extends Component {
                                         </a>
                                         <div id="menuDropdownShow" className="dropdown-menu"
                                              aria-labelledby="navbarDropdownMenuLink">
-                                            <a className="dropdown-item font-weight-normal" href="/#">Ноутбуки</a>
-                                            <a className="dropdown-item font-weight-normal" href="/#">Планшеты</a>
-                                            <a className="dropdown-item font-weight-normal" href="/#">Компьютеры</a>
-                                            <a className="dropdown-item font-weight-normal" href="/#">Комплектующие</a>
-                                            <a className="dropdown-item font-weight-normal" href="/#">Смартфоны, связь, навигация</a>
-                                            <a className="dropdown-item font-weight-normal" href="/#">Принтеры</a>
-                                            <a className="dropdown-item font-weight-normal" href="/#">Сетевое оборудование</a>
-                                            <a className="dropdown-item font-weight-normal" href="/#">Телевизоры, проекторы</a>
-                                            <a className="dropdown-item font-weight-normal" href="/#">Гарнитура</a>
-                                            <a className="dropdown-item font-weight-normal" href="/#">Бытовая техника</a>
+                                            {category.map(elem => (
+                                                <Dropright key={shortid.generate()} id={shortid.generate()} category={elem.category} />
+                                            ))}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Ноутбуки</a>*/}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Планшеты</a>*/}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Компьютеры</a>*/}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Комплектующие</a>*/}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Смартфоны, связь, навигация</a>*/}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Принтеры</a>*/}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Сетевое оборудование</a>*/}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Телевизоры, проекторы</a>*/}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Гарнитура</a>*/}
+                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Бытовая техника</a>*/}
                                             <button onClick={this.toggleDropdown} className="dropdown-item text-muted" href="/#">Закрыть <svg width="1em"
                                                                                                      height="1em"
                                                                                                      viewBox="0 0 16 16"
@@ -113,7 +119,7 @@ class NavigationBoots extends Component {
                                     </li>
                                 </ul>
                             </div>
-                            <form className="form-inline mt-0 mt-md-0 ml-sm-2">
+                            <form className="form-inline mt-0 mt-md-0 ml-sm-2 mr-sm-4">
                                 <input className="form-control mr-sm-2" type="text" placeholder="Поиск..."
                                        aria-label="Поиск..."/>
                             </form>
@@ -122,7 +128,7 @@ class NavigationBoots extends Component {
                                     data-toggle="collapse"
                                     data-target="#navbarHeader"
                                     aria-controls="navbarHeader" aria-expanded="true" aria-label="Toggle navigation">
-                                <span className="navbar-toggler-icon mr-sm-0"></span>
+                                <span className="navbar-toggler-icon"></span>
                             </button>
                         </div>
                     </nav>

@@ -13,8 +13,7 @@ class MainCard extends Component {
                         <p className="card-text">{brief_description}</p>
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="btn-group">
-                                <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
+                                <a href="/#" className="btn btn-primary">Купить</a>
                             </div>
                             <small className="text-muted">9 mins</small>
                         </div>
