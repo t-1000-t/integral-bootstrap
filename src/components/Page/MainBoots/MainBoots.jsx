@@ -56,9 +56,7 @@ class MainBoots extends Component {
                     <div className="container">
                         <div className="row">
                             {arrMain.length > 0 && arrMain.map(elem => (
-                                <MainCard key={elem.productID} brief_description={elem.brief_description}
-                                          large_image={elem.large_image} product_code={elem.product_code}
-                                          cardName={elem.name}></MainCard>
+                                <MainCard key={elem.productID} elem={elem}></MainCard>
                             ))}
                         </div>
                     </div>
