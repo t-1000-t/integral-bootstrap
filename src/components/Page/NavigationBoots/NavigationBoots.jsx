@@ -1,8 +1,11 @@
 import React, {Component} from "react";
+import {NavLink} from "react-router-dom";
 import closeDropdown from "../../middleware/closeDropdown";
 import showDropdown from "../../middleware/showDropdown";
 import Dropright from "../MainBoots/Dropright/Dropright";
 import shortid from "shortid";
+import categ_list from "../../services/categ_list";
+import routes from "../../../routes/routes";
 
 
 class NavigationBoots extends Component {
@@ -11,7 +14,6 @@ class NavigationBoots extends Component {
     state = {
         isShow: false,
         isOpenDropdown: false,
-        category: [{category: "Ноутбуки"}, {category: "Планшеты"}, {category: "Компьютеры"}, {category: "Комплектующие"}, {category: "Смартфоны, связь, навигация"}, {category: "Принтеры"}, {category: "Сетевое оборудование"}, {category: "Телевизоры, проекторы"}, {category: "Гарнитура"}, {category: "Бытовая техника"}]
     };
 
     componentDidMount() {
@@ -63,7 +65,7 @@ class NavigationBoots extends Component {
     };
 
     render() {
-        const {isShow, isOpenDropdown, category} = this.state;
+        const {isShow, isOpenDropdown} = this.state;
         return (
             <header>
                 <div>
@@ -80,37 +82,27 @@ class NavigationBoots extends Component {
                             </a>
                             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                                 <ul className="navbar-nav">
-                                    {/*<li className="nav-item active">*/}
-                                    {/*<a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>*/}
-                                    {/*</li>*/}
                                     <li id="closeDropdownShow"
                                         className="nav-item dropdown active">
-                                        <a onClick={this.toggleDropdown} className="nav-link dropdown-toggle" href="/#" id="navbarDropdownMenuLink"
+                                        <a onClick={this.toggleDropdown} className="nav-link dropdown-toggle" href="/#"
+                                           id="navbarDropdownMenuLink"
                                            role="button" data-toggle="dropdown" aria-haspopup="false"
                                            aria-expanded={isOpenDropdown ? "true" : "false"}>
                                             Каталог товаров
                                         </a>
-                                        <div id="menuDropdownShow" className="dropdown-menu"
+                                        <div id="menuDropdownShow" className="dropdown-menu row"
                                              aria-labelledby="navbarDropdownMenuLink">
-                                            {category.map(elem => (
-                                                <Dropright key={shortid.generate()} id={shortid.generate()} category={elem.category} />
+                                             {categ_list.category.map(elem => (
+                                                <Dropright  key={shortid.generate()} id={shortid.generate()}
+                                                           category={elem.category} list={elem.list}/>
                                             ))}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Ноутбуки</a>*/}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Планшеты</a>*/}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Компьютеры</a>*/}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Комплектующие</a>*/}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Смартфоны, связь, навигация</a>*/}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Принтеры</a>*/}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Сетевое оборудование</a>*/}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Телевизоры, проекторы</a>*/}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Гарнитура</a>*/}
-                                            {/*<a className="dropdown-item font-weight-normal" href="/#">Бытовая техника</a>*/}
-                                            <button onClick={this.toggleDropdown} className="dropdown-item text-muted" href="/#">Закрыть <svg width="1em"
-                                                                                                     height="1em"
-                                                                                                     viewBox="0 0 16 16"
-                                                                                                     className="bi bi-caret-up-fill text-success"
-                                                                                                     fill="currentColor"
-                                                                                                     xmlns="http://www.w3.org/2000/svg">
+                                            <button onClick={this.toggleDropdown} className="dropdown-item text-muted"
+                                                    href="/#">Закрыть <svg width="1em"
+                                                                           height="1em"
+                                                                           viewBox="0 0 16 16"
+                                                                           className="bi bi-caret-up-fill text-success"
+                                                                           fill="currentColor"
+                                                                           xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
                                             </svg></button>
@@ -147,9 +139,13 @@ class NavigationBoots extends Component {
                                     information.</p>
                             </div>
                             <div className="col-sm-4 offset-md-1 py-4">
+
                                 <h4 className="text-white">Контакты</h4>
+
                                 <ul className="list-unstyled">
-                                    <li><a href="/#" className="text-white">Follow on Twitter</a></li>
+                                    <NavLink to={`${routes.CONTACT}`}>
+                                    <li><a href="/#" className="text-white">contact page</a></li>
+                                    </NavLink>
                                     <li><a href="/#" className="text-white">Like on Facebook</a></li>
                                     <li><a href="/#" className="text-white">Email</a></li>
                                 </ul>
