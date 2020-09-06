@@ -5,7 +5,7 @@ import routes from "../../routes/routes";
 import NavigationBoots from "../Page/NavigationBoots";
 import FooterBoots from "../Page/FooterBoots/FooterBoots";
 import MainBoots from "../Page/MainBoots/MainBoots";
-import ViewCategoryProducts from "../Page/MainBoots/ViewCategoryProducts/ViewCategoryProducts"
+import ViewCategoryProducts from "../Page/MainBoots/ViewCategoryProducts"
 import ContactBoots from "../Page/MainBoots/ContactBoots/ContactBoots";
 
 
